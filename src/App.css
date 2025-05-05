@@ -2,9 +2,11 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
   height: 100vh;
+  margin: 70px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .App-logo {
@@ -41,3 +43,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.Nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav img {
+  margin-right: 100px;
+}
+
