@@ -6,34 +6,9 @@ import React from 'react';
 import './Home.css';
 import SpecialItemCard from '../components/SpecialItemCard';
 import FeedbackCard from '../components/FeedbackCard';
-import './Home.css';
 
 const mainImage = '../icons_assets/restaurant.jpg';
 
-const imageSize = {
-    width: '10%',
-    height: '10%',
-}
-/*
-const container = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    marginLeft: '30px',
-    marginRight: '30px',
-}
-const column = {
-    flex: 2,
-    padding: 10,
-    boxSizing: 'border-box',
-}
-const leftColumn = {
-    backgroundColor: '#f0f0f0',
-    textAlign: 'left',
-}
-const rightColumn = {
-    backgroundColor: '#d0d0d0',
-}
-*/
 
 const specials = [
     {
@@ -54,6 +29,28 @@ const specials = [
         price: '$5.00',
         description: 'This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.',
     }
+]
+
+const feedback = [
+    {
+        name: 'Customer 1',
+        rating: 4.5,
+        comment: 'This is a comment',
+        cutomerImage: '../icons_assets/restaurant chef B.jpg',
+    },
+    {
+        name: 'Customer 2',
+        rating: 1,
+        comment: 'This is a comment',
+        cutomerImage: '../icons_assets/restaurant chef B.jpg',
+    },
+    {
+        name: 'Customer 3',
+        rating: 5,
+        comment: 'This is a comment',
+        cutomerImage: '../icons_assets/restaurant chef B.jpg',
+    },
+
 ]
 
 
@@ -81,14 +78,25 @@ const IntroSection = () => (
 )
 
 const SpecialsSection = () => (
-    <section id='specialsSection'>
+    <section className='specials-section'>
         <h2>This week's specials!</h2>
-        <div className="specials-container">
+        <div className="specials-cards-container">
             {
                 specials.map((special) => (
-                    <SpecialItemCard key={special.name} item={special} />
+                    <SpecialItemCard key={special.title} item={special} />
                 ))
             }
+        </div>
+    </section>
+)
+
+const FeedbackSection = () => (
+    <section className='feedback-section'>
+        <h2>Customer Feedback</h2>
+        <div className="feedback-cards-container">
+            {feedback.map((feedback) => (
+                <FeedbackCard key={feedback.name} item={feedback} />
+            ))}
         </div>
     </section>
 )
@@ -98,7 +106,7 @@ const Home = () => {
         <main>
             <IntroSection />
             <SpecialsSection />
-            {/* <Feedback /> */}
+            <FeedbackSection />
         </main>
     );
 };

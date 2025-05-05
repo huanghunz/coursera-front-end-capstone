@@ -1,0 +1,28 @@
+
+.feedback-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 16px;
+    margin: 8px;
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feedback-card-customer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.feedback-card img {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 16px;
+}

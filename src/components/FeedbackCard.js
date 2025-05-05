@@ -1,11 +1,19 @@
 // Specials Component
 import React from 'react';
+import './FeedbackCard.css';
 
 
-function FeedbackCard() {
+function FeedbackCard(props) {
+    const { name, rating, comment, cutomerImage } = props.item;
+
     return (
-        <div>
-            <h1>FeedbackCard</h1>
+        <div className="feedback-card">
+            <p>Rating: {rating}  / 5 </p>
+            <div className="feedback-card-customer">
+                <img src={cutomerImage} alt={name} />
+                <p>{name}</p>
+            </div>
+            <p>{comment}</p>
         </div>
     )
 }
