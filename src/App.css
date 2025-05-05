@@ -5,9 +5,16 @@
 
   height: 100vh;
   margin: 70px;
-  margin-left: 100px;
-  margin-right: 100px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
 }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -44,14 +51,12 @@
   }
 }
 
-
-.Nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.section-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
 }
-
-.Nav img {
-  margin-right: 100px;
-}
-

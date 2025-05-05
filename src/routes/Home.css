@@ -1,30 +1,5 @@
 /* Home.css */
-.image-size {
-    width: 10%;
-    height: 10%;
-}
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-.column {
-    flex: 2;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.left-column {
-    background-color: #f0f0f0;
-    text-align: left;
-}
-
-.right-column {
-    background-color: #d0d0d0;
-}
 
 .specials-container {
     display: flex;
@@ -42,9 +17,7 @@
     background: #f4f4f2;
     min-height: 320px;
     gap: 48px;
-    max-width: 1200px;         /* Set your desired max width */
-    margin-left: auto;
-    margin-right: auto;
+
     width: 100%;
 
 }

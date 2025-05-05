@@ -8,7 +8,7 @@ import SpecialItemCard from '../components/SpecialItemCard';
 import FeedbackCard from '../components/FeedbackCard';
 import './Home.css';
 
-const mainImage = '../icons_assets/restauranfood.jpg';
+const mainImage = '../icons_assets/restaurant.jpg';
 
 const imageSize = {
     width: '10%',
@@ -43,7 +43,7 @@ const specials = [
         description: 'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
     },
     {
-        image: '../icons_assets/bruschetta.svg',
+        image: '../icons_assets/bruchetta.svg',
         title: 'Bruschetta',
         price: '$5.99',
         description: 'Our Bruschetta is made from grilled bread that has been rubbed with garlic and seasoned with salt and olive oil.',
@@ -84,9 +84,10 @@ const SpecialsSection = () => (
     <section id='specialsSection'>
         <h2>This week's specials!</h2>
         <div className="specials-container">
-            {specials.map((special) => (
-                <SpecialItemCard key={special.name} item={special} />
-            ))
+            {
+                specials.map((special) => (
+                    <SpecialItemCard key={special.name} item={special} />
+                ))
             }
         </div>
     </section>
@@ -97,10 +98,6 @@ const Home = () => {
         <main>
             <IntroSection />
             <SpecialsSection />
-
-
-
-            {/* <Specials /> */}
             {/* <Feedback /> */}
         </main>
     );
