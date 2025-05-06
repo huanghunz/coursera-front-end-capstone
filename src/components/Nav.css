@@ -1,0 +1,39 @@
+
+.nav {
+    display: flex;
+    gap: 28px;                   /* Space between nav links */
+}
+
+.nav-logo {
+    width: 140px;
+}
+
+
+.nav-link {
+    color: #495e57;
+    text-decoration: none;
+    font-size: 1.1rem;
+
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 16px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background: #f4ce14;
+    color: #333;
+    outline: none;
+}
+
+
+/* Responsive: stack nav links on small screens */
+@media (max-width: 900px) {
+    .nav {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        margin-top: 12px;
+    }
+}

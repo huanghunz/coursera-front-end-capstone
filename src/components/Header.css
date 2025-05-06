@@ -1,7 +1,6 @@
 .header {
     width: 100%;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .header-content {
@@ -12,27 +11,6 @@
     height: 80px;
 }
 
-.nav {
-    display: flex;
-    gap: 32px;                      /* Space between nav links */
-}
-
-.nav-link {
-    color: #495e57;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 16px;
-    transition: background 0.2s, color 0.2s;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    background: #f4ce14;
-    color: #333;
-    outline: none;
-}
 
 /* Responsive: stack nav links on small screens */
 @media (max-width: 900px) {
@@ -41,11 +19,5 @@
         height: auto;
         align-items: flex-start;
         padding: 16px 0;
-    }
-    .nav {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        margin-top: 12px;
     }
 }

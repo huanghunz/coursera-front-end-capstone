@@ -1,3 +1,5 @@
+import './Nav.css';
+
 const defaultLinks = [
     {
         "text": "Home",
@@ -48,9 +50,7 @@ function Nav(props) {
     };
     return (
         <nav className="nav">
-            <div> {/* this div help sizing the logo in different screen sizes */}
-                <img className="nav-logo" src="/icons_assets/logo.svg" alt="Logo" />
-            </div>
+            <img className="nav-logo" src="/icons_assets/logo.svg" alt="Logo" />
             {
                 navLinks.map((s) => {
                     if (s.elementId !== undefined) {

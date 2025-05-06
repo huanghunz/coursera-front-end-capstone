@@ -80,7 +80,18 @@ const IntroSection = () => (
 
 const SpecialsSection = () => (
     <section className='specials-section'>
-        <h2>This week's specials!</h2>
+        <div className="specials-frame"></div>
+        <div className="specials-header">
+
+            <h2>This week's specials!</h2>
+            <button
+                className="intro-reserve-btn"
+                tabIndex={0}
+                aria-label="Online Menu"
+            >
+            Online Menu
+            </button>
+        </div>
         <div className="specials-cards-container">
             {
                 specials.map((special) => (
