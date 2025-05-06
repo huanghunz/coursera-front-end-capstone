@@ -1,6 +1,5 @@
 /* Home.css */
 
-
 .specials-section {
     margin-top: 40px;
 }
@@ -33,9 +32,7 @@
     background: #f4f4f2;
     min-height: 320px;
     gap: 48px;
-
     width: 100%;
-
 }
 
 .intro-left {
@@ -53,6 +50,13 @@
     color: #495e57;
     margin-bottom: 12px;
     font-weight: 700;
+}
+
+.intro-subtitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #495e57;
+    margin: 0;
 }
 
 .intro-desc {
