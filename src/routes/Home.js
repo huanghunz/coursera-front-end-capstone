@@ -3,6 +3,7 @@
 // home route
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 import './Home.css';
 import SpecialItemCard from '../components/SpecialItemCard';
 import FeedbackCard from '../components/FeedbackCard';
@@ -50,22 +51,23 @@ const feedback = [
         comment: 'This is a comment',
         cutomerImage: '../icons_assets/restaurant chef B.jpg',
     },
-
 ]
 
 
-const IntroSection = () => (
-    <section className="intro-section">
-        <div className="intro-left">
-            <h1 className="intro-title">Little Lemon</h1>
+const IntroSection = () => {
+    const navigate = useNavigate();
+    return (
+        <section className="intro-section">
+            <div className="intro-left">
+                <h1 className="intro-title">Little Lemon</h1>
             <p className="intro-subtitle">Chicago</p>
             <p className="intro-desc">
             Welcome to Little Lemon, where fresh flavors and cozy ambiance await you. Enjoy our chef’s specials and reserve your table today!
             </p>
-            <button
-            className="intro-reserve-btn"
-            tabIndex={0}
-            aria-label="Reserve a table"
+            <button onClick={() => navigate('/booking')}
+                className="intro-reserve-btn"
+                tabIndex={0}
+                aria-label="Reserve a table"
             >
             Reserve a Table
             </button>
@@ -76,7 +78,7 @@ const IntroSection = () => (
             alt="Little Lemon Restaurant"
         />
     </section>
-)
+)}
 
 const SpecialsSection = () => (
     <section className='specials-section'>

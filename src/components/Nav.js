@@ -31,7 +31,8 @@ function Nav(props) {
 
     const {customLinksData} = props;
     const navLinks = customLinksData ? customLinksData : defaultLinks;
-    const handleClick = (id) => () => {
+    const handleClick = (event, id) => {
+        event.preventDefault();
         /* Syntax note:
             const handleClick = (anchor) => {
             return () => {
@@ -56,7 +57,7 @@ function Nav(props) {
                     if (s.elementId !== undefined) {
                         return (
                             <a  className="nav-link"
-                                href={s.elementId} key={s.text} onClick={handleClick(s.elementId)}>{s.text}</a>
+                                href={s.elementId} key={s.text} onClick={(e) => handleClick(e, s.elementId)}>{s.text}</a>
                         )
                     } else if (s.externalLink !== undefined) {
                         return (

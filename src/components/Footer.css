@@ -2,13 +2,14 @@
 .footer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 50px;
     padding: 2px;
     min-height: 400px;
     width: 100%;
     margin-top: 40px;
+    padding-left: 100px;
+    flex-wrap: wrap;
 }
 
 .footer-img {
@@ -57,4 +58,13 @@
 
 .footer-content .nav-logo {
     display:none;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+    .footer {
+        justify-content: center;
+        gap: 24px;
+        padding: 24px 12px;
+    }
 }
