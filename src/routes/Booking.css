@@ -1,0 +1,96 @@
+.booking-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  font-family: "Markazi Text", "Karla", sans-serif;
+}
+
+.booking-banner {
+  width: 100%;
+}
+
+.picker-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+  min-width: 600px;
+}
+
+.picker-calendar {
+    min-width: 300px;
+}
+
+.picker-item {
+  flex: auto;
+  text-align: center;
+  border-radius: 16px;
+  min-width: 200px;
+}
+
+.time-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.time-item {
+    flex: auto;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 16px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #f4ce14;
+}
+
+.time-item {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 16px;
+}
+
+.time-item:hover {
+  background-color: #f4ce14;
+}
+
+
+.final-time-selected {
+  background-color: #f4ce14;
+}
+
+.booking-button {
+    background: #f4ce14;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 10px 32px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+
+}
+
+.booking-button:hover,
+.booking-button:focus {
+    background: #e9b824;
+    outline: none;
+}
+
+.booking-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
