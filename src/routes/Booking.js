@@ -2,6 +2,7 @@
 // booking route
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import './Booking.css';
@@ -78,70 +79,87 @@ const generateTimeRange = (selectedTime) => {
 }
 
 const Booking = () => {
-  const guestsNumerOptions = getGuestsNumerOptions();
-  const timeSlotOptions = getTimeSlotOptions();
+    const navigate = useNavigate()
+    const guestsNumerOptions = getGuestsNumerOptions();
+    const timeSlotOptions = getTimeSlotOptions();
 
-  const [selectedTimeSlot, setSelectedTimeSlot] = useState({
-    value: "7:00pm",
-    label: "7:00pm"
-  });
-  const [selectedGuestsNumber, setSelectedGuestsNumber] = useState(guestsNumerOptions[1]);
-  const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedTimeSlot, setSelectedTimeSlot] = useState({
+        value: "7:00pm",
+        label: "7:00pm"
+    });
+    const [selectedGuestsNumber, setSelectedGuestsNumber] = useState(guestsNumerOptions[1]);
+    const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const [ranges, setRanges] = useState(generateTimeRange(selectedTimeSlot.value));
-  const [finalTime, setFinalTime] = useState(null);
+    const [ranges, setRanges] = useState(generateTimeRange(selectedTimeSlot.value));
+    const [finalTime, setFinalTime] = useState({
+        value: "7:00pm",
+        label: "7:00pm"
+    });
 
-  useEffect(() => {
-    const timeRange = generateTimeRange(selectedTimeSlot.value);
-    setRanges(timeRange);
-    setFinalTime(selectedTimeSlot.value);
-  }, [selectedTimeSlot]);
-  return (
-    <div className="booking-section">
-        <div>
-            <img className="booking-banner" src={banner} alt="restaurant" />
-        </div>
-        <div className="picker-container">
-            <Select
-                options={guestsNumerOptions}
-                className="picker-item"
-                value={selectedGuestsNumber}
-                onChange={(selectedOption) => setSelectedGuestsNumber(selectedOption)}
-            />
-            <div> {/* this div to control the size of the date picker */}
-                <DatePicker
-                    showIcon
-                    toggleCalendarOnIconClick
-                    selected={selectedDate}
-                    onChange={(date) => setSelectedDate(date)}
-                    className="text-center picker-item picker-calendar"
-                />
+    useEffect(() => {
+        const timeRange = generateTimeRange(selectedTimeSlot.value);
+        setRanges(timeRange);
+        setFinalTime(selectedTimeSlot);
+    }, [selectedTimeSlot]);
+    return (
+        <div className="booking-section">
+            <div>
+                <img className="booking-banner" src={banner} alt="restaurant" />
             </div>
-            <Select
-                options={timeSlotOptions}
-                className="picker-item"
-                value={selectedTimeSlot}
-                onChange={(selectedOption) => setSelectedTimeSlot(selectedOption)}
-            />
-      </div>
-      <p> Pick a Time</p>
-      <div className="time-container">
-          {
-            ranges.map((range) => (
-                <button
-                    className={`time-item ${finalTime === range ? 'final-time-selected' : ''}`}
-                    key={range}
-                    onClick={() => setFinalTime(range)}
-                >
-                    {range}
-                </button>
-            ))
-          }
-      </div>
-      {/* this button to jump to the form page */}
-      <button className="booking-button" disabled={finalTime === null}>Reserve Now</button>
+            <div className="picker-container">
+                <Select
+                    options={guestsNumerOptions}
+                    className="picker-item"
+                    value={selectedGuestsNumber}
+                    onChange={(selectedOption) => setSelectedGuestsNumber(selectedOption)}
+                />
+                <div> {/* this div to control the size of the date picker */}
+                    <DatePicker
+                        showIcon
+                        toggleCalendarOnIconClick
+                        selected={selectedDate}
+                        onChange={(date) => {
+                            setSelectedDate(date)
+                        }}
+                        className="text-center picker-item picker-calendar"
+                    />
+                </div>
+                <Select
+                    options={timeSlotOptions}
+                    className="picker-item"
+                    value={selectedTimeSlot}
+                    onChange={(selectedOption) => setSelectedTimeSlot(selectedOption)}
+                />
+        </div>
+        <p> Pick a Time</p>
+        <div className="time-container">
+            {
+                ranges.map((range) => (
+                    <button
+                        className={`time-item ${finalTime.value === range ? 'final-time-selected' : ''}`}
+                        key={range}
+                        onClick={() => setFinalTime({value: range, label: range})}
+                    >
+                        {range}
+                    </button>
+                ))
+            }
+        </div>
+        {/* this button to jump to the form page */}
+        <button
+            className="booking-button"
+            disabled={finalTime === null}
+            onClick={() => navigate('/booking/confirmation',{
+                state: {
+                    finalTime,
+                    selectedDate,
+                    selectedGuestsNumber
+                }
+            })}
+        >
+            Reserve Now
+        </button>
     </div>
-  )
-};
+)};
 
 export default Booking;

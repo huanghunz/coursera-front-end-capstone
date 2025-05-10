@@ -60,3 +60,20 @@
   padding-right: 32px;
   box-sizing: border-box;
 }
+
+.submit-btn {
+  background: #f4ce14;
+  color: #333;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  }
+  .submit-btn:hover,
+  .submit-btn:focus {
+  background: #e9b824;
+  outline: none;
+}

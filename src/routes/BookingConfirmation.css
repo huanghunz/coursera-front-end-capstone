@@ -1,0 +1,132 @@
+.booking-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Karla', sans-serif;
+    align-items: center;
+    background-color: #f4f4f2;
+    padding: 20px;
+}
+
+
+.back-to-pick-date {
+    margin-top: auto;
+    background: #ecc94b;
+    color: #fff;
+    font-weight: 600;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #d69e2e;
+    }
+}
+
+.booking-content-info {
+    margin-top: 10px;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    min-width: 300px;
+    border-radius: 16px;
+    align-items: center;
+}
+
+.booking-content-info p {
+    flex: 1;
+    font-weight: 400;
+}
+
+.booking-content-form-submit {
+    padding: 10px 32px;
+    background: #f4ce14;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 10px 32px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    margin: 10px;
+}
+
+.booking-content-form-submit:hover,
+.booking-content-form-submit:focus {
+    background: #e9b824;
+    outline: none;
+}
+
+.booking-content-form-submit.reset-btn {
+    background: #fff;
+    border-style: solid;
+    border-color: #f4ce14;
+}
+
+.booking-content-form-submit.reset-btn:hover,
+.booking-content-form-submit.reset-btn:focus {
+    background: #ba931e;
+    outline: none;
+}
+
+.booking-context-form {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.booking-content-form-container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+    max-width: 500px;
+    min-width: 300px;
+    text-align: left;
+    border-radius: 16px;
+    font-size: 1.2rem;
+}
+
+.form-field-label {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: left;
+
+    font-size: 1.2rem;
+}
+
+
+.form-field input {
+
+    font-size: 1.2rem;
+}
+
+
+
+
+.form-field-label-error {
+    color: red;
+    position: absolute;
+    left: 80px; /* or wherever you want it to start */
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease;;
+}
+
