@@ -10,10 +10,10 @@ import Footer from './components/Footer'
 import About from './components/About'
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <Header />
 
-      <Routes>
+      <Routes id="routes">
         <Route path="/" element={<Home />} className="App" />
         <Route path="/booking" element={<Booking />} />
         <Route path="/booking/confirmation" element={<BookingConfirmation />} />
